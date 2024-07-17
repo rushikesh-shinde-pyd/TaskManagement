@@ -5,7 +5,6 @@ from datetime import timedelta
 
 # Django imports
 from django.conf import settings
-from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils import timezone
 
@@ -51,12 +50,11 @@ def send_due_task_emails():
             html_message = render_to_string('tasks/due_tasks_email.html', {
                 'task': task,
             })
-
-            send_mail(
+            
+            task.user.email_user(
                 SUBJECT_TASK_DUE,
                 plain_text_message,
                 settings.EMAIL_HOST_USER,
-                [task.user.email],
                 html_message=html_message,
                 fail_silently=False,
             )

@@ -24,6 +24,15 @@ logger = logging.getLogger(__name__)
 
 
 class RegisterView(APIView):
+    """
+    View for user registration and token generation.
+
+    - GET: Retrieves user details if cached; otherwise, fetches from database and caches.
+    - POST: Creates a new user instance, caches user details, and generates authentication tokens.
+    - PATCH: Updates user details partially.
+
+    """
+
     throttle_classes = (throttling.AnonRateThrottle, throttling.UserRateThrottle)
 
     def get(self, request):
@@ -89,6 +98,13 @@ class RegisterView(APIView):
         return [permission() for permission in self.permission_classes]
 
 class TaskListCreateView(APIView):
+    """
+    View for listing and creating tasks for authenticated users.
+
+    - GET: Retrieves paginated list of tasks for the authenticated user, caching if not already cached.
+    - POST: Creates a new task instance associated with the authenticated user.
+
+    """
     permission_classes = [permissions.IsAuthenticated]
     throttle_classes = [throttling.UserRateThrottle]
     pagination_class = pagination.PageNumberPagination
@@ -130,6 +146,14 @@ class TaskListCreateView(APIView):
             return Response(RESPONSE_500, status=500)
 
 class TaskDetailView(APIView):
+    """
+    View for retrieving, updating, and deleting individual tasks for authenticated users.
+
+    - GET: Retrieves details of a specific task belonging to the authenticated user.
+    - PATCH: Updates details of a specific task belonging to the authenticated user.
+    - DELETE: Deletes a specific task belonging to the authenticated user.
+
+    """
     permission_classes = [permissions.IsAuthenticated]
     throttle_classes = [throttling.UserRateThrottle]
 

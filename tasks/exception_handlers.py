@@ -1,8 +1,13 @@
+# Third-party imports
 from rest_framework.views import exception_handler
 from rest_framework.exceptions import Throttled, AuthenticationFailed
 from rest_framework.response import Response
 
 def custom_exception_handler(exc, context):
+    """
+    This function handles exceptions raised during request processing and customizes the error response
+    based on the type of exception encountered.
+    """
     response = exception_handler(exc, context)
 
     if isinstance(exc, Throttled):

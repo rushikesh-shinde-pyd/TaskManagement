@@ -24,7 +24,7 @@ class Task(BaseModel):
     """
     Represents a task associated with a user.
     """
-    user        = models.ForeignKey(User, on_delete=models.CASCADE, help_text='The user who owns this task.')
+    user        = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks', help_text='The user who owns this task.')
     title       = models.CharField(max_length=128, default=NOT_AVAILABLE, help_text='The title of the task.')
     description = models.TextField(max_length=256, default=NOT_AVAILABLE, help_text='Detailed description of the task.')
     status      = models.CharField(max_length=16, choices=STATUS_CHOICES, default='draft', help_text='Current status of the task.')

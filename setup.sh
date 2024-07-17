@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 # Update package list
 echo "Updating package list..."
 sudo apt update
@@ -13,27 +11,13 @@ sudo apt install -y redis-server
 # Start and enable Redis service
 echo "Starting and enabling Redis service..."
 sudo systemctl start redis-server
-
-# Check Redis service status
-echo "Checking Redis service status..."
-sudo systemctl status redis-server
+# sudo systemctl enable redis-server # Uncomment if you want Redis to start on boot
 
 echo "Redis installation and setup completed."
 
-# Set up Python virtual environment and activate it
-echo "Setting up Python virtual environment..."
-python3 -m venv .venv
-
-# Delete existing migrations
-# echo "Deleting existing migrations..."
-# rm db.sqlite3 tasks/migrations/00*
-
 # Create log folder
-echo "log folder creating..."
+echo "Creating log folder..."
 mkdir log
-
-echo "Activating virtual environment..."
-. .venv/bin/activate
 
 # Install required Python packages
 echo "Installing required Python packages..."
@@ -47,6 +31,6 @@ echo "Applying Django migrations..."
 python manage.py migrate
 
 echo "Project setup completed."
-
-echo "Starting Django development server..."
-python manage.py runserver
+echo -e "\n"
+echo "Run - 'python manage.py runserver' to start the development server."
+echo "Run - 'celery -A task_management worker -B --loglevel=info' to start a Celery worker along with the Celery beat scheduler."

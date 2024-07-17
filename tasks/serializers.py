@@ -10,9 +10,12 @@ class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True)
 
     def create(self, validated_data):
+        password = validated_data.get('password')
         user = super().create(validated_data)
-        user.set_password(validated_data['password'])
-        user.save(update_fields=['password'])
+
+        if password:
+            user.set_password(password)
+            user.save(update_fields=['password'])
 
         return user
 
@@ -34,6 +37,15 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        due_date = validated_data.pop('due_date', None)
+        print(validated_data)
+
+        if due_date:
+            due_date = truncate_to_minute(due_date)
+            validated_data['due_date'] = due_date
+
+        return super().create(validated_data)
     
     def update(self, instance, validated_data):
         due_date = validated_data.pop('due_date', None)

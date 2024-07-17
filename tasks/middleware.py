@@ -4,7 +4,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class SimpleMiddleware:
+class RequestElapsedTimeMiddleware:
+    """
+    Simple middleware that logs the elapsed time for each request processing.
+    """
+
     def __init__(self, get_response):
         self.get_response = get_response
 
