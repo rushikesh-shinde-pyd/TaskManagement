@@ -25,8 +25,8 @@ echo "Setting up Python virtual environment..."
 python3 -m venv .venv
 
 # Delete existing migrations
-echo "Deleting existing migrations..."
-rm db.sqlite3 tasks/migrations/00*
+# echo "Deleting existing migrations..."
+# rm db.sqlite3 tasks/migrations/00*
 
 # Create log folder
 echo "log folder creating..."
