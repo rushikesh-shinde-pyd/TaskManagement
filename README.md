@@ -53,6 +53,6 @@ You can watch a demo of the project here:
 
 Here are some screenshots of the project:
 
-![Screenshot 1](https://tinyurl.com/2yaqge7q)
+[Screenshot 1](https://tinyurl.com/2yaqge7q)
 
-![Screenshot 2](https://tinyurl.com/23pef4ng)
+[Screenshot 2](https://tinyurl.com/23pef4ng)
