@@ -42,6 +42,17 @@ celery -A task_management worker -B --loglevel=info
 You can access the API endpoints via Postman using the following collection:
 
 [Postman Collection](https://documenter.getpostman.com/view/9822314/2sA3kRJPh9)
+
+## Demo
+
+You can watch a demo of the project here:
+
 [Demo](https://drive.google.com/file/d/1ShcKWU5f5-Jr6MqcT-z1RT4VlWYamOOJ/view?usp=sharing)
-[Screenshot 1](https://tinyurl.com/2yaqge7q)
-[Screenshot 2](https://tinyurl.com/23pef4ng)
+
+## Screenshots
+
+Here are some screenshots of the project:
+
+![Screenshot 1](https://tinyurl.com/2yaqge7q)
+
+![Screenshot 2](https://tinyurl.com/23pef4ng)
