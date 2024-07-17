@@ -1,0 +1,111 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# If you're using PostgreSQL
+*.pgd
+
+# If you're using SQLite
+*.sqlite3
+
+# Django migrations
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django stuff:
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Local environment settings
+.env
+.local
+
+# If you are using PyCharm
+.idea/
+
+# If you are using VS Code
+.vscode/
+
+# If you are using Visual Studio
+.vscode/
+.vs/
+
+# If you are using PyCharm
+.idea/
+
+# Environment variables file
+.env
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Celery beat schedule file
+celerybeat-schedule
+celerybeat.pid
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+.venv.bak/
+
+# Django debug toolbar cache
+debug-toolbar/
+
+# Custom
+log/
