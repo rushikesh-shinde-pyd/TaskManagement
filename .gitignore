@@ -108,4 +108,5 @@ env.bak/
 debug-toolbar/
 
 # Custom
+tasks/migrations/0*
 log/
